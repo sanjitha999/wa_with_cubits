@@ -10,10 +10,8 @@ class SearchCubit extends Cubit<SearchState> {
 
   Future<void> getResults(searchText) async{
     try{
-      print("loading");
       emit(SearchLoading());
       var resultList = await _resultRepository.getSearchResult(searchText);
-      print("Results:$resultList");
       emit(SearchFound(resultList));
     } catch(e){
       emit(SearchError(e.toString()));

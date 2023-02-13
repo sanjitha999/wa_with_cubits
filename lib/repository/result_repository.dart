@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 
-class ResultRepository {
+class ResultRepository{
   List pageTitles;
   List pageLinks;
   ResultRepository(this.pageTitles, this.pageLinks);
@@ -15,8 +15,6 @@ class ResultRepository {
     var data = jsonDecode(response.body);
     pageTitles = data[1];
     pageLinks = data[3];
-    print(pageTitles);
-    // return [pageTitles, pageLinks];
     return ResultRepository(pageTitles, pageLinks);
   }
 

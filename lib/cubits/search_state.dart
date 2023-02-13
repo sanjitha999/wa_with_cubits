@@ -14,6 +14,5 @@ class SearchFound extends SearchState {
 
 class SearchError extends SearchState {
   String error;
-
   SearchError(this.error);
 }
