@@ -26,7 +26,7 @@ Widget resultCard(ResultRepository result) {
                     var url = pageLinks[index];
                     // ignore: deprecated_member_use
                     if (await canLaunch(url)) {
-                      await launch(url);
+                      await launch(url, forceSafariVC: true, forceWebView: true);
                     } else {
                       throw 'Could not launch $url';
                     }
