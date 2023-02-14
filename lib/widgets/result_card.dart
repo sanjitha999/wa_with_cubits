@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -24,7 +26,6 @@ Widget resultCard(ResultRepository result) {
                   style: ListTileStyle.list,
                   onTap: () async {
                     var url = pageLinks[index];
-                    // ignore: deprecated_member_use
                     if (await canLaunch(url)) {
                       await launch(url, forceSafariVC: true, forceWebView: true);
                     } else {
